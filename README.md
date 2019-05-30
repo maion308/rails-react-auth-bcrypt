@@ -156,7 +156,7 @@ In order for us to have access to this class, we need to add the `/lib` director
 
 ```ruby
 
-config.autoload_paths << Rails.root.join('lib')
+config.eager_load_paths += Dir["#{config.root}/lib/**/"]
 
 ```
 
@@ -275,7 +275,7 @@ In short:
 
 - JWT is used to encrypt user data and also authorize our controller actions
 
-- We created a custome JsonWebToken class and added it to the Rails autoload paths
+- We created a custome JsonWebToken class and added it to the Rails eagerload paths
 
 - We created an AuthorizationController and endpoint in our routes to handle logins
 

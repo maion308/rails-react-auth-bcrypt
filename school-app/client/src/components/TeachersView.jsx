@@ -8,8 +8,7 @@ function TeachersView(props) {
         <div
           key={teacher.id}
           className="teacher-card"
-          onClick={(e) => {
-            debugger;
+          onClick={() => {
             props.history.push(`/teachers/${teacher.id}`);
             window.scrollTo(0, 0);
           }}>

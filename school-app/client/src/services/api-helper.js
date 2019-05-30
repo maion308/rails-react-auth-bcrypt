@@ -16,7 +16,7 @@ export const loginUser = (loginData) => {
 export const registerUser = (registerData) => {
   const opts = {
     method: 'POST',
-    body: JSON.stringify(registerData),
+    body: JSON.stringify({ user: registerData}),
     headers: {
       'Content-Type': 'application/json'
     }

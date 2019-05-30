@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: %i[show update destroy]
+  before_action :authorize_request, except: %i[index show]
 
   # GET /teachers
   def index
@@ -16,6 +17,7 @@ class TeachersController < ApplicationController
   # POST /teachers
   def create
     @teacher = Teacher.new(teacher_params)
+    
     if @teacher.save
       render json: @teacher, status: :created
     else

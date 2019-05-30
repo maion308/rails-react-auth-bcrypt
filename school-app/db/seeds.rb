@@ -10,6 +10,6 @@ Teacher.create!(name: 'Bell', photo: 'http://uploads.tapatalk-cdn.com/20161123/6
 Teacher.create!(name: 'Dom', photo: 'http://i.imgur.com/JRkmvOv.png')
 Teacher.create(name: 'Drew', photo: 'https://lh5.googleusercontent.com/-Po8zRYag1ns/TgvVNrnnRGI/AAAAAAAAFuQ/UBoR0jidi1s/w506-h750/241140_10150199352146566_646356565_7341938_4425157_o.jpg')
 Teacher.create!(name: 'J', photo: 'https://avatars0.githubusercontent.com/u/12768542?v=4&s=400')
-Teacher.create!(name: 'Ramsey', photo: 'https://docs.npmjs.com/images/npm.svg')
+Teacher.create!(name: 'Professor Dogge', photo: 'https://cdn0.wideopenpets.com/wp-content/uploads/2018/01/d5ce4fef9e213390c2c99b46a26f3537.jpg')
 
 puts "#{Teacher.count} teachers created!"
