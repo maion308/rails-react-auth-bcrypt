@@ -7,7 +7,7 @@ const api = axios.create({
 })
 
 export const loginUser = (loginData) => {
-  const resp = api.port('/auth/login', loginData)
+  const resp = api.post('/auth/login', loginData)
   return resp.data
 }
 
