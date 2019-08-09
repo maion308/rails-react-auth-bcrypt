@@ -15,7 +15,8 @@ import {
   updateTeacher,
   destroyTeacher,
   loginUser,
-  registerUser
+  registerUser,
+  verifyUser
 } from './services/api-helper'
 
 import './App.css';
@@ -38,11 +39,10 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getTeachers();
-    const checkUser = localStorage.getItem("jwt");
-    if (checkUser) {
-      const user = decode(checkUser);
+    const user = await verifyUser();
+    if (user) {
       this.setState({
         currentUser: user
       })
@@ -112,9 +112,8 @@ class App extends Component {
   handleLogin = async () => {
     const userData = await loginUser(this.state.authFormData);
     this.setState({
-      currentUser: decode(userData.token)
+      currentUser: userData
     })
-    localStorage.setItem("jwt", userData.token)
   }
 
   handleRegister = async (e) => {
@@ -124,7 +123,7 @@ class App extends Component {
   }
 
   handleLogout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("authToken");
     this.setState({
       currentUser: null
     })

@@ -6791,3 +6791,118 @@ Processing by AuthenticationController#login as HTML
 Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/teachers" for ::1 at 2019-08-09 12:03:23 -0400
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zero/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (43.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 168ms (Views: 87.9ms | ActiveRecord: 74.0ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-08-09 12:03:46 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"david", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"david", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "david"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+Completed 200 OK in 107ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/teachers" for ::1 at 2019-08-09 12:04:42 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (39.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 44ms (Views: 3.8ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/users/verify" for ::1 at 2019-08-09 12:04:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"verify"}
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58
+Completed 404 Not Found in 31ms (ActiveRecord: 17.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=verify):
+  
+app/controllers/users_controller.rb:58:in `set_user'
+Started GET "/teachers" for ::1 at 2019-08-09 12:20:09 -0400
+Started GET "/users/verify" for ::1 at 2019-08-09 12:20:09 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zero/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zero/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by TeachersController#index as HTML
+Processing by UsersController#verify as HTML
+  [1m[36mTeacher Load (20.8ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 151ms (Views: 24.5ms | ActiveRecord: 118.8ms)
+
+
+Completed 404 Not Found in 154ms (ActiveRecord: 145.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:58:in `set_user'
+Started GET "/teachers" for ::1 at 2019-08-09 12:24:33 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (114.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 118ms (Views: 3.3ms | ActiveRecord: 114.5ms)
+
+
+Started POST "/auth/login" for ::1 at 2019-08-09 12:24:43 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"david", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"david", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "david"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+Completed 200 OK in 113ms (Views: 0.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/teachers" for ::1 at 2019-08-09 12:24:47 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (6.9ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/verify" for ::1 at 2019-08-09 12:24:47 -0400
+Processing by UsersController#verify as HTML
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/users_controller.rb:58:in `set_user'
+Started GET "/teachers" for ::1 at 2019-08-09 12:27:55 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.8ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 106ms (Views: 12.2ms | ActiveRecord: 83.2ms)
+
+
+Started GET "/users/verify" for ::1 at 2019-08-09 12:27:56 -0400
+Processing by UsersController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/teachers" for ::1 at 2019-08-09 12:28:18 -0400
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" ORDER BY "teachers"."id" ASC[0m
+  ↳ app/controllers/teachers_controller.rb:9
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/verify" for ::1 at 2019-08-09 12:28:19 -0400
+Processing by UsersController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
