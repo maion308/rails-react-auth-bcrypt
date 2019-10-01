@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class AuthenticationController < ApplicationController
+  before_action :authorize_request, except: :login
+
   # POST /auth/login
   def login
     @user = User.find_by_username(params[:username])
@@ -10,6 +12,16 @@ class AuthenticationController < ApplicationController
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end
+  end
+
+  def verify
+    @user = {
+      id: @current_user[:id],
+      username: @current_user[:username],
+      email: @current_user[:email]
+    }
+
+    render json: @user
   end
 
   private

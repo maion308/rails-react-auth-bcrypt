@@ -41,16 +41,6 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def verify
-    @user = {
-      id: @current_user[:id],
-      username: @current_user[:username],
-      email: @current_user[:email]
-    }
-
-    render json: @user
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
